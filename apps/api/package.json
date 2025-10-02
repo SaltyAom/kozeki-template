@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "bun run --watch src/index.ts",
         "test": "bun run test:unit && bun run coverage",
-        "test:unit": "bun test && ",
+        "test:unit": "bun test",
         "coverage": "bun test --coverage",
         "build": "bun build --compile --minify-whitespace --minify-syntax --target bun --outfile server ./src/index.ts",
         "docker": "cd ../.. && docker build -t mono-api -f ./apps/api/Dockerfile ."

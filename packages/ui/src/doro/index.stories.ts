@@ -26,9 +26,3 @@ export const Medium: Story = {
         variant: 'medium'
     }
 }
-
-export const Large: Story = {
-    args: {
-        variant: 'large'
-    }
-}

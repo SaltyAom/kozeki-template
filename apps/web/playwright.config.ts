@@ -25,10 +25,17 @@ export default defineConfig({
             use: { ...devices['Desktop Chrome'] }
         }
     ],
-    // Run your local dev server before starting the tests.
-    webServer: {
-        command: 'bun run dev',
-        url: 'http://localhost:3000',
-        reuseExistingServer: !process.env.CI
-    }
+    // Run local dev servers before starting the tests.
+    webServer: [
+        {
+            command: 'cd ../api && bun run dev',
+            url: 'http://localhost:3001',
+            reuseExistingServer: !process.env.CI
+        },
+        {
+            command: 'bun run dev',
+            url: 'http://localhost:3000',
+            reuseExistingServer: !process.env.CI
+        }
+    ]
 })

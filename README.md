@@ -16,3 +16,18 @@ Ready to deploy template Elysia-Next Bun monorepo:
 - E2E test w/ Playwright
 - Docker
 - CI w/ GitHub Action
+
+
+## Getting Started
+
+```bash
+# Install ALL Dependencies
+bun install
+bun run dev
+```
+
+## Running Tests
+
+```bash
+bun run test
+```
