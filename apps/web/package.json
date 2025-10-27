@@ -27,7 +27,7 @@
         "@types/react": "^19.1.11",
         "@types/react-dom": "^19.1.7",
         "@vitejs/plugin-react": "^5.0.1",
-        "@vitest/ui": "3.2.4",
+        "@vitest/ui": "4.0.3",
         "config": "workspace:*",
         "eslint": "^9.34.0",
         "jsdom": "^26.1.0",
