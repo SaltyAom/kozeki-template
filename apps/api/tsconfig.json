@@ -4,7 +4,9 @@
         "jsx": "react",
         "module": "ESNext",
         "moduleResolution": "bundler",
-        "noEmit": true,
+        "noEmit": false,
+        "emitDeclarationOnly": true,
+        "outDir": "dist",
         "baseUrl": ".",
         "paths": {
             "@web/*": ["../web/src/*"],

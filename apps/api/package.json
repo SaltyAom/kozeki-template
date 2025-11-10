@@ -7,18 +7,18 @@
         "test": "bun run test:unit && bun run coverage",
         "test:unit": "bun test",
         "coverage": "bun test --coverage",
-        "build": "bun build --compile --minify-whitespace --minify-syntax --target bun --outfile server ./src/index.ts",
+        "build": "bun build --compile --minify-whitespace --minify-syntax --target bun --outfile server ./src/index.ts && tsc",
         "docker": "cd ../.. && docker build -t mono-api -f ./apps/api/Dockerfile ."
     },
     "dependencies": {
-        "@elysiajs/cors": "^1.3.3",
-        "@elysiajs/opentelemetry": "1.3.1",
-        "@elysiajs/swagger": "^1.3.1",
-        "elysia": "1.3.18"
+        "@elysiajs/cors": "^1.4.0",
+        "@elysiajs/opentelemetry": "1.4.6",
+        "@elysiajs/openapi": "^1.4.11",
+        "elysia": "catalog:"
     },
     "devDependencies": {
-        "@types/bun": "^1.2.20",
+        "@types/bun": "^1.3.2",
         "config": "workspace:*",
-        "eslint": "^9.34.0"
+        "eslint": "^9.39.1"
     }
 }

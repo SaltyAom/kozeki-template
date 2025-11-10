@@ -1,4 +1,4 @@
-FROM oven/bun:1.2.10 AS build
+FROM oven/bun:1.3.2 AS build
 
 WORKDIR /app
 
@@ -19,26 +19,27 @@ ENV NODE_ENV=production
 WORKDIR /app/apps/api
 RUN bun run build
 
+RUN bun install --production
+
+ENV NODE_ENV=production
+ENV PORT=3001
+
+# CMD ["./server"]
+
+# EXPOSE 3001
+
+# -----------
+FROM gcr.io/distroless/base
+
+WORKDIR /app
+
+COPY --from=build /app/apps/api/server server
+COPY --from=build /app/apps/api/dist dist
+COPY --from=build /app/node_modules node_modules
+
 ENV NODE_ENV=production
 ENV PORT=3001
 
 CMD ["./server"]
 
 EXPOSE 3001
-
-# -----------
-# FROM gcr.io/distroless/base
-
-# WORKDIR /app
-
-# COPY --from=build /app/server server
-# COPY --from=build /app/node_modules node_modules
-# COPY ./apps/server/.env .env
-
-# ENV NODE_ENV=production
-# ENV PORT=3001
-# ENV OTEL=false
-
-# CMD ["./server"]
-
-# EXPOSE 3001

@@ -10,7 +10,7 @@ import { join, dirname } from 'path'
  * It is needed in projects that use Yarn PnP or are set up within a monorepo.
  */
 function getAbsolutePath(value: string): any {
-    return dirname(require.resolve(join(value, 'package.json')))
+    return dirname(import.meta.resolve(join(value, 'package.json')))
 }
 
 const config: StorybookConfig = {
@@ -19,7 +19,7 @@ const config: StorybookConfig = {
         getAbsolutePath('@storybook/addon-docs'),
         getAbsolutePath('@storybook/addon-onboarding'),
         getAbsolutePath('@chromatic-com/storybook'),
-        getAbsolutePath('@storybook/experimental-addon-test')
+        // getAbsolutePath('@storybook/experimental-addon-test')
     ],
     framework: {
         name: getAbsolutePath('@storybook/react-vite'),
@@ -34,4 +34,5 @@ const config: StorybookConfig = {
         })
     }
 }
+
 export default config
