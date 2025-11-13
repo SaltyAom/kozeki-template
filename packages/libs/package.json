@@ -12,7 +12,7 @@
         "elysia": "catalog:"
     },
     "devDependencies": {
-        "@elysiajs/eden": "1.4.4",
+        "@elysiajs/eden": "1.4.5",
         "config": "workspace:*",
         "eslint": "^9.34.0",
         "typescript": "^5.9.2"
