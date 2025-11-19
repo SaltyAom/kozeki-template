@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "@elysiajs/cors": "^1.4.0",
-        "@elysiajs/opentelemetry": "1.4.6",
+        "@elysiajs/opentelemetry": "1.4.7",
         "@elysiajs/openapi": "^1.4.11",
         "elysia": "catalog:"
     },
